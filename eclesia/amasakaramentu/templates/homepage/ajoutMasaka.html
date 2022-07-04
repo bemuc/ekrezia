@@ -1,0 +1,157 @@
+{%  extends 'homebase.html' %}
+
+{% block content %}
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top mb-5" id="mainNav">
+    <div class="container d-flex align-items-center justify-content-space">
+        <a href="{% url 'homepage' %}"><h4 class="text-white">Paroisse</h4></a> 
+        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse px-5" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-0 px-0 px-lg-0 px-md-0 rounded" href="{% url 'logout' %}">Se deconnecter</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Masthead-->
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == "error" %}
+        <br>
+        <div class="alert alert-danger">
+        {{ message }}
+        </div>
+        {% else %}
+        <br>
+        <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+        </div>
+        {% endif %}
+        
+    {% endfor %}
+{% endif%}
+<div class="container page-section portfolio" style="margin-top: 11px;" id="portfolio">
+    <div class="row ">
+        <div class="col-md-2 grid-margin stretch-card"></div>
+        <div class="col-md-8 grid-margin">
+            <br>
+            <div class="card">
+                <div class="card-body ">
+                <div class="d-flex justify-content-center">
+                    <h2 class="">{{ titre }} nouveau chretien</h2>
+                </div>
+                <p class="card-description">
+                    <br>
+                    <br>
+                </p>
+                <form class="forms-sample" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group row mb-3">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Nomen</label>
+                    <div class="col-sm-9">
+                        <!-- <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email"> -->
+                        {{ form.nomen }}
+                    </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Natus</label>
+                        <div class="col-sm-9">
+                            <!-- <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"> -->
+                            {{ form.natus }}
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Domicilium</label>
+                    <div class="col-sm-9">
+                        <!-- <input type="text" class="form-control" id="exampleInputMobile" placeholder="Mobile number"> -->
+                        {{ form.domicilium }}
+                    </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                    <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Baptizus</label>
+                    <div class="col-sm-9">
+                        <!-- <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"> -->
+                        {{ form.baptizus }}
+                    </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                    <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Com.Prima</label>
+                    <div class="col-sm-9">
+                        <!-- <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"> -->
+                        {{ form.com_prima }}
+                    </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                    <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Com. Solen</label>
+                    <div class="col-sm-9">
+                        <!-- <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"> -->
+                        {{ form.com_solen }}
+                    </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                    <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Confirmatis</label>
+                    <div class="col-sm-9">
+                        <!-- <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"> -->
+                        {{ form.confirmatis }}
+                    </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                    <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Matrimonium</label>
+                    <div class="col-sm-9">
+                        <!-- <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"> -->
+                        {{ form.matrimonium }}
+                    </div>
+                    </div>
+                    
+                    <div class="form-group row mb-3">
+                    <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Pater</label>
+                    <div class="col-sm-9">
+                        <!-- <input type="password" class="form-control" id="exampleInputConfirmPassword2" placeholder="Password"> -->
+                        {{ form.pater }}
+                    </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                    <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Mater</label>
+                    <div class="col-sm-9">
+                        <!-- <input type="password" class="form-control" id="exampleInputConfirmPassword2" placeholder="Password"> -->
+                        {{ form.mater }}
+                    </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                    <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Patrinnu</label>
+                    <div class="col-sm-9">
+                        <!-- <input type="password" class="form-control" id="exampleInputConfirmPassword2" placeholder="Password"> -->
+                        {{ form.patrinus }}
+                    </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                    <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Matrinus</label>
+                    <div class="col-sm-9">
+                        <!-- <input type="password" class="form-control" id="exampleInputConfirmPassword2" placeholder="Password"> -->
+                        {{ form.matrina }}
+                    </div>
+                    </div>
+                    <!-- <div class="form-group row mb-3">
+                    <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Pater</label>
+                    <div class="col-sm-9">
+                        {{ form.pater }}
+                    </div>
+                    </div> -->
+                    <button type="submit" class="btn btn-primary mr-2" value="{{ titre }}">{{ titre }}</button>
+                    
+                    <a href="{% url 'amasaka' %}"><button type="button" class="btn btn-light ml-5 mr-3">Retour</button></a>
+                 
+                </form>
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <div class="col-md-2 grid-margin stretch-card"></div>
+    </div>
+</div>
+
+
+  {% endblock %}

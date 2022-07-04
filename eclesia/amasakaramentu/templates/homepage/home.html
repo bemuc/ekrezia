@@ -1,0 +1,66 @@
+
+{%  extends 'homebase.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container d-flex align-items-center justify-content-space">
+        <!-- <a href="#page" class="text-white">Paroisse</a> -->
+        <a href="{% url 'homepage' %}"><h4 class="text-white">Paroisse</h4></a> 
+        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse px-5" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-0 px-0 px-lg-0 px-md-0 rounded" href="{% url 'logout' %}">Se deconnecter</a></li>
+                <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li> -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Masthead-->
+
+<!-- Portfolio Section-->
+<section class="page-section portfolio my-3" id="portfolio">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <!-- <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2> -->
+        <!-- Icon Divider-->
+        <!-- <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div> -->
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+            <!-- Portfolio Item 1-->
+            <div class="col-md-6 col-lg-4 mb-5">
+                <a href="{% url 'amasaka' %}"><div class="portfolio-item mx-auto py-md-2 text-center border mb-5 h-100 w-100" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white">
+                            <i class="fas fa-plus fa-3x"></i> 
+                        </div>
+                    </div>
+                    <img class="img-fluid" height="800" width="300" style="height: 200px;" src="{% static 'amasakaramentu/homepage/assets/img/portfolio/children.svg' %}" alt="..." />
+                    <p class="fw-bold">Amasakaramentu</p>
+                </div></a>
+            </div>
+            <!-- Portfolio Item 2-->
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto text-center py-md-2 border mb-5 h-100 w-100" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                    </div>
+                    <img class="img-fluid" style="height: 200px;" src="{% static 'amasakaramentu/homepage/assets/img/portfolio/wedding.svg' %}" alt="..." />
+                    <p class="fw-bold">Abageni</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}
