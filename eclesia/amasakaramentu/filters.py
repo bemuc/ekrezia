@@ -5,6 +5,7 @@ from .models import *
 
 class amasakaFilter(django_filters.FilterSet):
 
+
     class Meta:
         model = amsakaramentu
         fields =  ['nomen','natus','domicilium']
