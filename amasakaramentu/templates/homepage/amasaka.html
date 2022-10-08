@@ -525,6 +525,7 @@
                 <div class="col">
                     <div class="card card-body">
                         <form method="get">
+                            {% csrf_token %}
                             {{ myfilter.form }}
                         <button class="btn btn-primary" type="submit">Rechercher</button>
                       </form>
