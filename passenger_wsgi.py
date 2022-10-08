@@ -1,0 +1,1 @@
+from eclesia.wsgi import application
