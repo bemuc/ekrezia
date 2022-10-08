@@ -153,3 +153,21 @@ JAZZMIN_SETTINGS = {
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
     "site_brand": "ECLESIA"
     }
+
+
+####### For deploy  ###########
+############# run-->   python manage.py check --deploy   ###########
+
+SECURE_HSTS_SECONDS = 31536000
+
+SECURE_HSTS_PRELOAD = True
+
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
+
+SECURE_SSL_REDIRECT = False
+
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+#SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure <actual secret key>")
