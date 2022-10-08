@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'amasakaramentu',
     'django_filters',
+    'corsheaders' #new
     
 ]
 
